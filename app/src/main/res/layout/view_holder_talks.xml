@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_talks_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/news_placeholder"
+        />
+    <TextView
+        android:id="@+id/tv_speaker_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:text="Susan Emmett"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/tv_talks_brief"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="This simple test can help kids hear better"
+        android:textColor="@color/secondaryTextColor"
+        android:layout_below="@+id/tv_speaker_name"
+        android:layout_marginTop="8dp"
+        android:textSize="@dimen/text_heading_2x"
+        android:layout_marginLeft="10dp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src=""/>
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5:24"
+        android:layout_toRightOf="@id/tv_talks_brief"
+        android:layout_alignLeft="@id/tv_talks_brief"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="10dp"/>
+</RelativeLayout>
