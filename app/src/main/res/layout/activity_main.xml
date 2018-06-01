@@ -14,11 +14,11 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            app:title="TED Talks"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primaryColor"
-            app:titleTextColor="@color/primaryTextColor"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="TED Talks"
+            app:titleTextColor="@color/primaryTextColor" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -36,6 +36,12 @@
 
     </FrameLayout>
 
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_search_white_48dp" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -7,17 +7,14 @@
 
     <!-- new color-->
     <color name="primaryColor">#ffffff</color>
-    <color name="primaryLightColor">#ffffff</color>
-    <color name="primaryDarkColor">#cccccc</color>
+    <color name="primaryLightColor">#FFCDD2</color>
+    <color name="primaryDarkColor">#D32F2F</color>
     <color name="secondaryColor">#e73f19</color>
     <color name="secondaryLightColor">#ff7446</color>
     <color name="secondaryDarkColor">#ad0000</color>
-    <color name="primaryTextColor">#e73f19</color>
+    <color name="primaryTextColor">#D32F2F</color>
     <color name="secondaryTextColor">#ffffff</color>
-    <color name="primary">#F44336</color>
-    <color name="primary_dark">#D32F2F</color>
-    <color name="primary_light">#FFCDD2</color>
-    <color name="accent">#9E9E9E</color>
+    <color name="accent">#e73f19</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
     <color name="icons">#FFFFFF</color>
