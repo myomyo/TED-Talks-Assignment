@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">TED Talks</string>
     <string name="action_settings">Settings</string>
+    <string name="toolbar_title"><font><b>TED</b> Talks</font></string>
+    <string name="talk1">
+        Susan Emmett \n<font size="18"><b>This is simple test can help kids \nhear better</b></font>
+    </string>
+
 </resources>

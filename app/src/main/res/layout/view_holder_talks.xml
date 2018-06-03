@@ -6,8 +6,8 @@
     <ImageView
         android:id="@+id/iv_talks_image"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:src="@drawable/ted_talk2"
+        android:layout_height="200dp"
+        android:src="@drawable/talk1"
         android:layout_marginLeft="@dimen/margin_card_medium"
         android:layout_marginRight="@dimen/margin_card_medium"
         android:layout_marginTop="@dimen/margin_card_medium"
@@ -20,7 +20,7 @@
         android:text="Susan Emmett"
         android:layout_marginTop="@dimen/margin_top_large"
         android:layout_marginLeft="15dp"
-        android:textSize="@dimen/text_regular_2x"/>
+        android:textSize="@dimen/text_regular"/>
 
     <ImageView
         android:id="@+id/iv_navigation"
@@ -38,25 +38,36 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_speaker_name"
         android:layout_marginLeft="15dp"
-        android:layout_alignParentLeft="true"
+        android:gravity="left|bottom"
         android:text="This simple test can help kids hear better"
         android:textColor="@color/secondaryTextColor"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_regular_2x"
+        android:lineSpacingMultiplier="0.8"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/iv_navigation"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
         android:layout_toRightOf="@id/tv_talk_title"
-        android:paddingTop="30dp"
+        android:gravity="right|bottom"
         android:text="5:24"
-        android:textAlignment="viewEnd"
         android:textColor="@color/secondaryTextColor"
         android:textSize="@dimen/text_regular_2x" />
+    <!--<Button
+        android:id="@+id/btn_talks"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="left|bottom"
+        android:background="@drawable/ted_talk"
+        android:text="@string/talk1"
+        android:textColor="@color/primaryColor"
+        android:textAllCaps="false"
+        android:paddingLeft="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_card_medium_2"-->
+        />
 
 </RelativeLayout>
