@@ -2,7 +2,7 @@
 <resources>
     <!--default color-->
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#e73f19</color>
+    <color name="colorPrimaryDark">#ab0000</color>
     <color name="colorAccent">#FF4081</color>
 
     <!-- new color-->
@@ -12,11 +12,22 @@
     <color name="secondaryColor">#e73f19</color>
     <color name="secondaryLightColor">#ff7446</color>
     <color name="secondaryDarkColor">#ad0000</color>
-    <color name="primaryTextColor">#D32F2F</color>
+    <color name="primaryTextColor">#e62b25</color>
     <color name="secondaryTextColor">#ffffff</color>
     <color name="accent">#e73f19</color>
-    <color name="primary_text">#212121</color>
+    <color name="primary_text">#111111</color>
     <color name="secondary_text">#757575</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
+    <color name="text_gray">#8E8E8E</color>
+
+    <!--<color name="primaryColor">#e62b25</color>
+  <color name="primaryLightColor">#ff6550</color>
+  <color name="primaryDarkColor">#ab0000</color>
+  <color name="secondaryColor">#ffffff</color>
+  <color name="secondaryLightColor">#ffffff</color>
+  <color name="secondaryDarkColor">#cccccc</color>
+  <color name="primaryTextColor">#ffffff</color>
+  <color name="secondaryTextColor">#000000</color>
+    -->
 </resources>

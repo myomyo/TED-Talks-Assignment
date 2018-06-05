@@ -34,5 +34,6 @@
     <dimen name="text_big_3x">80sp</dimen>
 
     <dimen name="margin_top_large">125dp</dimen>
+    <dimen name="talk_details_appbar_height">240dp</dimen>
 
 </resources>

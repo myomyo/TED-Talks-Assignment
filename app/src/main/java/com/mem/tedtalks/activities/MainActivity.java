@@ -1,4 +1,4 @@
-package com.mem.tedtalks;
+package com.mem.tedtalks.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,9 +11,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.mem.tedtalks.R;
 import com.mem.tedtalks.adapters.TalksAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
