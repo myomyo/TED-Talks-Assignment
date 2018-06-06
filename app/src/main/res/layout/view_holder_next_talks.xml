@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_medium_2">
+
+    <Button
+        android:id="@+id/ib_talks"
+        android:layout_width="@dimen/talks_width"
+        android:layout_height="@dimen/talks_height"
+        android:background="@drawable/talk3"
+        android:gravity="right|bottom"
+        android:paddingRight="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_medium"
+        android:textAllCaps="false"
+        android:textColor="@color/secondaryTextColor"
+        android:text="25:20"
+        android:textSize="@dimen/text_smaller"
+        android:textColorHighlight="#000000"
+        />
+
+    <TextView
+        android:id="@+id/tv_speaker_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_toRightOf="@+id/ib_talks"
+        android:text="Nilay Kulkarni"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_regular"
+        android:lineSpacingMultiplier="0.5"/>
+
+    <TextView
+        android:id="@+id/tv_talk_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_speaker_name"
+        android:layout_below="@+id/tv_speaker_name"
+        android:text="A life-saving invention that prevents human stampedes"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        android:lineSpacingMultiplier="0.5"
+        android:textColor="@color/primary_text"/>
+    <ImageButton
+        android:id="@+id/ib_more_vert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_vert_black_48dp"
+        android:layout_toRightOf="@+id/tv_talk_title"
+        android:layout_marginLeft="@dimen/margin_medium_3"
+        android:background="@color/bg_transparent"
+        android:layout_marginTop="@dimen/margin_card_medium"/>
+
+</RelativeLayout>

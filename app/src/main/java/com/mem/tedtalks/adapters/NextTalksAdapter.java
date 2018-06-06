@@ -6,22 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mem.tedtalks.R;
-import com.mem.tedtalks.delegates.TalkDelegate;
-import com.mem.tedtalks.viewholders.TalksViewHolder;
+import com.mem.tedtalks.viewholders.NextTalksViewHolder;
 
-public class TalksAdapter extends RecyclerView.Adapter {
-
-    private TalkDelegate mTalkDelegate;
-
-    public TalksAdapter(TalkDelegate talkDelegate) {
-        mTalkDelegate = talkDelegate;
-    }
-
+public class NextTalksAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.view_holder_talks, parent, false);
-        return new TalksViewHolder(view, mTalkDelegate);
+        View view = layoutInflater.inflate(R.layout.view_holder_next_talks, parent, false);
+        return new NextTalksViewHolder(view);
     }
 
     @Override

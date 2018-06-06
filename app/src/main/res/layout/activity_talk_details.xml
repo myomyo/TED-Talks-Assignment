@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
@@ -20,13 +20,14 @@
                 android:id="@+id/iv_talk_backdrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/talk1"/>
+                android:src="@drawable/talk1" />
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"/>
+                app:layout_collapseMode="pin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -36,136 +37,212 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium_2"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_speaker_name"
+                android:id="@+id/tv_speak_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="Anushka Naiknaware"
-                android:textSize="@dimen/margin_medium_2"
-                android:textColor="@color/primary_text"/>
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_2x" />
+
             <TextView
                 android:id="@+id/tv_talk_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/margin_medium_3"
+                android:layout_below="@id/tv_speak_name"
+                android:text="A teen scientist's invention to help wounds heal"
                 android:textColor="@color/primary_text"
-                android:textStyle="bold"
-                android:text="A teen scientist's invention to help wounds heal"/>
+                android:textSize="@dimen/text_regular_22"
+                android:lineSpacingMultiplier="0.7"
+                android:textStyle="bold" />
+
             <LinearLayout
+                android:id="@+id/ll_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_talk_title"
+                android:layout_marginTop="@dimen/margin_card_medium"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/tv_duration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6:58  |  "
-                    android:textColor="@color/secondary_text"/>
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_regular" />
+
                 <Button
                     android:id="@+id/btn_listen"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/button_listen_height"
+                    android:background="@color/bg_transparent"
+                    android:drawableLeft="@drawable/ic_volume_up_gray_16dp"
                     android:text="Listen"
                     android:textAllCaps="false"
-                    android:background="@color/colorPrimary"
                     android:textColor="@color/secondary_text"
-                    android:drawableLeft="@drawable/ic_volume_up_gray_24dp"/>
+                    android:textSize="@dimen/text_regular"
+                    android:layout_gravity="center"/>
 
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/ll_navigation"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_duration"
+                android:layout_marginTop="@dimen/margin_card_medium">
+
                 <ImageButton
-                    android:id="@+id/ibtn_playlist"
+                    android:id="@+id/ib_playlist"
+                    style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_playlist_add_black_24dp"
-                    android:clickable="true"
-                    />
+                    android:src="@drawable/ic_playlist_add_black_24dp" />
+
                 <ImageButton
-                    android:id="@+id/ibtn_favorite"
+                    android:id="@+id/ib_favorite"
+                    style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:clickable="true"/>
+                    android:src="@drawable/ic_favorite_border_black_24dp" />
+
                 <ImageButton
-                    android:id="@+id/ibtn_download"
+                    android:id="@+id/ib_download"
+                    style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_file_download_black_24dp"
-                    android:clickable="true"/>
+                    android:src="@drawable/ic_file_download_black_24dp" />
+
                 <ImageButton
-                    android:id="@+id/ibtn_share"
+                    android:id="@+id/ib_share"
+                    style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_share_black_24dp"
-                    android:clickable="true"
-                    />
+                    android:src="@drawable/ic_share_black_24dp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_talk_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/margin_medium_2"
+                android:layout_below="@id/ll_navigation"
+                android:layout_marginTop="@dimen/margin_medium_2"
                 android:text="Working out of her garage, Anushka Naiknaware designed a sensor that tracks wound healing, becoming the youngest winner (at age 13) of the Google Science Fair. Her clever invention addresses the global challenge of chronic wounds, which don't heal properly due to preexisting conditions like diabetes and account for billions in medical costs worldwide. Join Naiknaware as she explains how her smart bandage works -- and how she's sharing her story to inspire others to make a difference."
-            />
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular"
+                android:lineSpacingMultiplier="1"/>
+
+            <View
+                android:id="@+id/line_spacer"
+                style="@style/Divider"
+                android:layout_below="@+id/tv_talk_details" />
+
             <TextView
                 android:id="@+id/tv_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/margin_medium_3"
-                android:text="About the speaker"/>
-            <RelativeLayout
+                android:layout_below="@id/line_spacer"
+                android:text="About the speaker"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_3x" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ib_speaker_photo"
+                android:layout_width="@dimen/profile_width"
+                android:layout_height="@dimen/profile_height"
+                android:layout_below="@+id/tv_about"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:scaleType="centerCrop"
+                android:src="@drawable/talk_profile" />
+
+            <TextView
+                android:id="@+id/tv_about_speaker_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/iv_speaker_photo"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp" />
-                <TextView
-                    android:id="@+id/tv_about_speaker_name"
-                    android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_about"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_toRightOf="@+id/ib_speaker_photo"
+                android:text="Anushka Naiknaware"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_occupation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_about_speaker_name"
+                android:layout_below="@+id/tv_about_speaker_name"
+                android:text="Scientist"
+                android:textSize="@dimen/text_regular_2x" />
+
+            <TextView
+                android:id="@+id/tv_about_speaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_occupation"
+                android:layout_below="@+id/tv_occupation"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="In 2016, at age 13, Anushka Naiknaware was the youngest winner of the Google Science Fair, with her invention of a clever new bandage that tells caregivers when it needs to be changed."
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular"
+                android:lineSpacingMultiplier="1"/>
+
+            <View
+                android:id="@+id/line_spacer_below"
+                style="@style/Divider"
+                android:layout_below="@+id/tv_about_speaker" />
+
+            <TextView
+                android:id="@+id/iv_watch_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line_spacer_below"
+                android:text="Watch next"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_3x"
+                android:layout_marginBottom="@dimen/margin_medium_2"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rv_height"
+                android:layout_below="@+id/iv_watch_next"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_talk_details"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Anushka Naiknaware"
-                    android:layout_toRightOf="@+id/iv_speaker_photo"/>
-                <TextView
-                    android:id="@+id/tv_occupation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Scientist"
-                    android:layout_alignLeft="@+id/tv_about_speaker_name"
-                    android:layout_below="@+id/tv_about_speaker_name"
-                    />
-                <TextView
-                    android:id="@+id/tv_about_speaker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_occupation"
-                    android:layout_alignLeft="@+id/tv_occupation"
-                    android:text="In 2016, at age 13, Anushka Naiknaware was the youngest winner of the Google Science Fair, with her invention of a clever new bandage that tells caregivers when it needs to be changed."
-                    />
+                    android:layout_below="@+id/iv_watch_next"
+                    android:layout_marginBottom="@dimen/margin_medium_3">
 
-            </RelativeLayout>
+                </android.support.v7.widget.RecyclerView>
+            </FrameLayout>
 
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_play_talk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/margin_medium_2"
+        android:src="@drawable/ic_play_arrow_white_48dp"
         app:layout_anchor="@+id/appbar"
-        android:src="@drawable/ic_play_arrow_white_36dp"
-        app:layout_anchorGravity="right|bottom"/>
+        app:layout_anchorGravity="right|bottom" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,5 +1,6 @@
 package com.mem.tedtalks.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,8 +14,9 @@ import android.view.MenuItem;
 
 import com.mem.tedtalks.R;
 import com.mem.tedtalks.adapters.TalksAdapter;
+import com.mem.tedtalks.delegates.TalkDelegate;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements TalkDelegate {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class MainActivity extends BaseActivity {
         });
 
         RecyclerView rvTalks = (RecyclerView) findViewById(R.id.rv_ted_talks);
-        TalksAdapter talksAdapter = new TalksAdapter();
+        TalksAdapter talksAdapter = new TalksAdapter(this);
         rvTalks.setAdapter(talksAdapter);
         rvTalks.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
@@ -59,5 +61,11 @@ public class MainActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTapTalk() {
+        Intent intent = new Intent(getApplicationContext(), TalkDetailsActivity.class);
+        startActivity(intent);
     }
 }

@@ -21,6 +21,8 @@
     <color name="divider">#BDBDBD</color>
     <color name="text_gray">#8E8E8E</color>
 
+    <color name="bg_transparent">@android:color/transparent</color>
+
     <!--<color name="primaryColor">#e62b25</color>
   <color name="primaryLightColor">#ff6550</color>
   <color name="primaryDarkColor">#ab0000</color>
