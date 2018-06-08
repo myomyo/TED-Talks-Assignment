@@ -9,7 +9,8 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        >
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -58,10 +59,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_speak_name"
+                android:lineSpacingMultiplier="0.7"
                 android:text="A teen scientist's invention to help wounds heal"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/text_regular_22"
-                android:lineSpacingMultiplier="0.7"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -69,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_talk_title"
-                android:layout_marginTop="@dimen/margin_card_medium"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:orientation="horizontal">
 
                 <TextView
@@ -82,15 +83,14 @@
 
                 <Button
                     android:id="@+id/btn_listen"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="@dimen/button_listen_height"
                     android:background="@color/bg_transparent"
                     android:drawableLeft="@drawable/ic_volume_up_gray_16dp"
                     android:text="Listen"
                     android:textAllCaps="false"
                     android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/text_regular"
-                    android:layout_gravity="center"/>
+                    android:textSize="@dimen/text_regular" />
 
             </LinearLayout>
 
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll_duration"
-                android:layout_marginTop="@dimen/margin_card_medium">
+                android:layout_marginTop="@dimen/margin_medium">
 
                 <ImageButton
                     android:id="@+id/ib_playlist"
@@ -136,21 +136,54 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ll_navigation"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                android:text="Working out of her garage, Anushka Naiknaware designed a sensor that tracks wound healing, becoming the youngest winner (at age 13) of the Google Science Fair. Her clever invention addresses the global challenge of chronic wounds, which don't heal properly due to preexisting conditions like diabetes and account for billions in medical costs worldwide. Join Naiknaware as she explains how her smart bandage works -- and how she's sharing her story to inspire others to make a difference."
+                android:lineSpacingMultiplier="1"
+                android:text="Working out of her garage, Anushka Naiknaware designed a sensor that tracks wound healing, becoming the youngest winner (at age 13) of the Google Science Fair.Her clever invention addresses the global challenge of chronic wounds, which don\'t heal properly due to preexisting conditions like diabetes and account for billions in medical costs worldwide.Join Naiknaware as she explains how her smart bandage works — and how she's sharing her story to inspire others to make a difference."
                 android:textColor="@color/primary_text"
-                android:textSize="@dimen/text_regular"
-                android:lineSpacingMultiplier="1"/>
+                android:textSize="@dimen/text_regular" />
+            <TextView
+                android:id="@+id/tv_talk_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TEDWomen 2017, Filmed Nov 2017 "
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold|italic"
+                android:layout_alignLeft="@+id/tv_talk_details"
+                android:layout_below="@+id/tv_talk_details"
+                android:textColor="@color/secondary_text"/>
 
             <View
                 android:id="@+id/line_spacer"
                 style="@style/Divider"
-                android:layout_below="@+id/tv_talk_details" />
+                android:layout_below="@+id/tv_talk_date" />
+            <TextView
+                android:id="@+id/tv-talk_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/line_spacer"
+                android:text="TED Talks are free thanks to support from"
+                android:textSize="@dimen/text_small"
+                android:textStyle="italic"
+                android:textColor="@color/secondary_text"/>
+            <View
+                android:id="@+id/view_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/divider"
+                android:layout_below="@+id/tv-talk_ad"/>
+            <View
+                android:id="@+id/line_spacer2"
+                style="@style/Divider"
+                android:layout_below="@+id/view_ad" />
 
             <TextView
                 android:id="@+id/tv_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/line_spacer"
+                android:layout_below="@id/line_spacer2"
                 android:text="About the speaker"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/text_regular_3x" />
@@ -192,14 +225,14 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tv_occupation"
                 android:layout_below="@+id/tv_occupation"
-                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_card_medium_2"
+                android:lineSpacingMultiplier="1"
                 android:text="In 2016, at age 13, Anushka Naiknaware was the youngest winner of the Google Science Fair, with her invention of a clever new bandage that tells caregivers when it needs to be changed."
                 android:textColor="@color/primary_text"
-                android:textSize="@dimen/text_regular"
-                android:lineSpacingMultiplier="1"/>
+                android:textSize="@dimen/text_regular" />
 
             <View
-                android:id="@+id/line_spacer_below"
+                android:id="@+id/line_spacer3"
                 style="@style/Divider"
                 android:layout_below="@+id/tv_about_speaker" />
 
@@ -207,18 +240,17 @@
                 android:id="@+id/iv_watch_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/line_spacer_below"
+                android:layout_below="@+id/line_spacer3"
+                android:layout_marginBottom="@dimen/margin_medium_2"
                 android:text="Watch next"
                 android:textColor="@color/primary_text"
-                android:textSize="@dimen/text_regular_3x"
-                android:layout_marginBottom="@dimen/margin_medium_2"/>
+                android:textSize="@dimen/text_regular_3x" />
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/rv_height"
                 android:layout_below="@+id/iv_watch_next"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                >
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_talk_details"
@@ -229,7 +261,6 @@
 
                 </android.support.v7.widget.RecyclerView>
             </FrameLayout>
-
 
 
         </RelativeLayout>

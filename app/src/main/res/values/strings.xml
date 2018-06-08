@@ -5,5 +5,9 @@
     <string name="talk1">
         Susan Emmett \n<font size="18"><b>This is simple test can help kids \nhear better</b></font>
     </string>
+    <string name="talk_details">
+        Working out of her garage, Anushka Naiknaware designed a sensor that tracks wound healing, becoming the youngest winner (at age 13) of the Google Science Fair.Her clever invention addresses the global challenge of chronic wounds, which don\'t heal properly due to preexisting conditions like diabetes and account for billions in medical costs worldwide.Join Naiknaware as she explains how her smart bandage works — and how she's sharing her story to inspire others to make a difference.
+        <font size="24" color="#8E8E8E"><i>TEDWomen 2017, Filmed Nov 2017</i></font>
+    </string>
 
 </resources>
