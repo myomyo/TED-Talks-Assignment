@@ -9,14 +9,13 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        >
+        android:fitsSystemWindows="true">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/talk_details_appbar_height"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="@color/secondaryColor">
+            app:contentScrim="@color/secondaryColor"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:id="@+id/iv_talk_backdrop"
@@ -25,11 +24,31 @@
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/talk1" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/btn_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_white_black_24dp"
+                        android:layout_marginTop="@dimen/margin_medium_2"
+                        android:layout_marginLeft="@dimen/margin_medium_2"
+                        />
+                    <ImageView
+                        android:id="@+id/btn_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_more_vert_white_24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/margin_medium_2"
+                        android:layout_marginRight="@dimen/margin_medium_2"/>
+            </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"/>
+                app:layout_collapseMode="pin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -84,7 +103,7 @@
 
                 <Button
                     android:id="@+id/btn_listen"
-                    android:layout_width="70dp"
+                    android:layout_width="@dimen/button_listen_width"
                     android:layout_height="@dimen/button_listen_height"
                     android:background="@color/bg_transparent"
                     android:drawableLeft="@drawable/ic_volume_up_gray_16dp"
@@ -141,40 +160,44 @@
                 android:text="Working out of her garage, Anushka Naiknaware designed a sensor that tracks wound healing, becoming the youngest winner (at age 13) of the Google Science Fair.Her clever invention addresses the global challenge of chronic wounds, which don\'t heal properly due to preexisting conditions like diabetes and account for billions in medical costs worldwide.Join Naiknaware as she explains how her smart bandage works — and how she's sharing her story to inspire others to make a difference."
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/text_regular" />
+
             <TextView
                 android:id="@+id/tv_talk_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TEDWomen 2017, Filmed Nov 2017 "
-                android:textSize="@dimen/text_regular_2x"
-                android:textStyle="bold|italic"
                 android:layout_alignLeft="@+id/tv_talk_details"
                 android:layout_below="@+id/tv_talk_details"
-                android:textColor="@color/secondary_text"/>
+                android:text="TEDWomen 2017, Filmed Nov 2017 "
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold|italic" />
 
             <View
                 android:id="@+id/line_spacer"
                 style="@style/Divider"
                 android:layout_below="@+id/tv_talk_date" />
+
             <TextView
                 android:id="@+id/tv-talk_ad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/line_spacer"
+                android:layout_centerHorizontal="true"
                 android:text="TED Talks are free thanks to support from"
+                android:textColor="@color/secondary_text"
                 android:textSize="@dimen/text_small"
-                android:textStyle="italic"
-                android:textColor="@color/secondary_text"/>
+                android:textStyle="italic" />
+
             <View
                 android:id="@+id/view_ad"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
+                android:layout_below="@+id/tv-talk_ad"
                 android:layout_marginLeft="@dimen/margin_small"
                 android:layout_marginRight="@dimen/margin_small"
                 android:layout_marginTop="@dimen/margin_small"
-                android:background="@color/divider"
-                android:layout_below="@+id/tv-talk_ad"/>
+                android:background="@color/divider" />
+
             <View
                 android:id="@+id/line_spacer2"
                 style="@style/Divider"
@@ -193,8 +216,8 @@
                 android:id="@+id/ib_speaker_photo"
                 android:layout_width="@dimen/profile_width"
                 android:layout_height="@dimen/profile_height"
-                android:layout_below="@+id/tv_about"
-                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/talk_profile" />
 

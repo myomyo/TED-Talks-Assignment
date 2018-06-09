@@ -7,32 +7,32 @@
         android:id="@+id/iv_talks_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/talk1"
         android:layout_marginLeft="@dimen/margin_medium"
         android:layout_marginRight="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_medium"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/talk1" />
+
     <TextView
         android:id="@+id/tv_speaker_name"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/secondaryTextColor"
-        android:text="Susan Emmett"
-        android:layout_marginTop="@dimen/margin_top_large"
         android:layout_marginLeft="@dimen/margin_medium_2"
-        android:textSize="@dimen/text_regular"/>
+        android:layout_marginTop="@dimen/margin_top_large"
+        android:text="Susan Emmett"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/text_regular" />
 
     <ImageButton
         android:id="@+id/ib_navigation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/bg_transparent"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_top_large"
         android:layout_toRightOf="@id/tv_speaker_name"
-        android:src="@drawable/ic_more_vert_gray_24dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="@dimen/margin_medium"/>
+        android:background="@color/bg_transparent"
+        android:src="@drawable/ic_more_vert_white_24dp" />
 
     <TextView
         android:id="@+id/tv_talk_title"
@@ -41,22 +41,22 @@
         android:layout_below="@+id/tv_speaker_name"
         android:layout_marginLeft="15dp"
         android:gravity="left|bottom"
-        android:text="This simple test can help kids hear better"
+        android:lineSpacingMultiplier="0.8"
         android:paddingRight="@dimen/margin_medium"
+        android:text="This simple test can help kids hear better"
         android:textColor="@color/secondaryTextColor"
         android:textSize="18sp"
-        android:lineSpacingMultiplier="0.8"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ib_navigation"
         android:layout_below="@+id/ib_navigation"
         android:layout_marginTop="20dp"
-        android:layout_alignLeft="@id/ib_navigation"
         android:text="5:24"
         android:textColor="@color/secondaryTextColor"
-        android:textSize="@dimen/text_regular"/>
+        android:textSize="@dimen/text_regular" />
 
 </RelativeLayout>
