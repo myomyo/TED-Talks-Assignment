@@ -126,28 +126,32 @@
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_playlist_add_black_24dp" />
+                    android:src="@drawable/ic_playlist_add_black_24dp"
+                    android:foreground="@drawable/ripple"/>
 
                 <ImageButton
                     android:id="@+id/ib_favorite"
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_favorite_border_black_24dp" />
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:foreground="@drawable/ripple"/>
 
                 <ImageButton
                     android:id="@+id/ib_download"
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_file_download_black_24dp" />
+                    android:src="@drawable/ic_file_download_black_24dp"
+                    android:foreground="@drawable/ripple"/>
 
                 <ImageButton
                     android:id="@+id/ib_share"
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_share_black_24dp" />
+                    android:src="@drawable/ic_share_black_24dp"
+                    android:foreground="@drawable/ripple"/>
             </LinearLayout>
 
             <TextView
