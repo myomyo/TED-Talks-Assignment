@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,8 +16,15 @@ import com.mem.tedtalks.R;
 import com.mem.tedtalks.adapters.TalksAdapter;
 import com.mem.tedtalks.data.models.TedTalkModel;
 import com.mem.tedtalks.delegates.TalkDelegate;
+import com.mem.tedtalks.events.SuccessGetTalkEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class MainActivity extends BaseActivity implements TalkDelegate {
+
+    private TalksAdapter mTalksAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +43,8 @@ public class MainActivity extends BaseActivity implements TalkDelegate {
         });
 
         RecyclerView rvTalks = (RecyclerView) findViewById(R.id.rv_ted_talks);
-        TalksAdapter talksAdapter = new TalksAdapter(this);
-        rvTalks.setAdapter(talksAdapter);
+        mTalksAdapter = new TalksAdapter(this);
+        rvTalks.setAdapter(mTalksAdapter);
         rvTalks.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
 
@@ -66,8 +74,26 @@ public class MainActivity extends BaseActivity implements TalkDelegate {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Override
     public void onTapTalk() {
         Intent intent = new Intent(getApplicationContext(), TalkDetailsActivity.class);
         startActivity(intent);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onSuccessGetTalk(SuccessGetTalkEvent event){
+        Log.d("onSuccessGetTalk", "onSuccessGetTalk : "+event.getTalkList());
+        mTalksAdapter.setTalkList(event.getTalkList());
     }
 }

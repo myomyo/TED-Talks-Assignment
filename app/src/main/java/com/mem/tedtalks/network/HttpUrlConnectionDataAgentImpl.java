@@ -3,10 +3,15 @@ package com.mem.tedtalks.network;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.mem.tedtalks.events.ApiErrorEvent;
+import com.mem.tedtalks.events.SuccessGetTalkEvent;
+import com.mem.tedtalks.network.response.GetTalkResponse;
 import com.mem.tedtalks.utils.TalkConstants;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,7 +21,6 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -113,8 +117,18 @@ public class HttpUrlConnectionDataAgentImpl implements TalksDataAgent {
             }
 
             @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
+            protected void onPostExecute(String responseString) {
+                super.onPostExecute(responseString);
+                Gson gson = new Gson();
+                GetTalkResponse talkResponse = gson.fromJson(responseString, GetTalkResponse.class);
+                Log.d("onPostExecute", "Talks List Size : "+ talkResponse.getTedTalks().size());
+                if(talkResponse.isResponseOK()){
+                    SuccessGetTalkEvent event = new SuccessGetTalkEvent(talkResponse.getTedTalks());
+                    EventBus.getDefault().post(event);
+                } else {
+                    ApiErrorEvent event = new ApiErrorEvent(talkResponse.getMessage());
+                    EventBus.getDefault().post(event);
+                }
             }
         }.execute();
     }

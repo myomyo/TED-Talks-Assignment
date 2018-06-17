@@ -6,31 +6,43 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mem.tedtalks.R;
+import com.mem.tedtalks.data.vos.TalkVO;
 import com.mem.tedtalks.delegates.TalkDelegate;
 import com.mem.tedtalks.viewholders.TalksViewHolder;
 
-public class TalksAdapter extends RecyclerView.Adapter {
+import java.util.ArrayList;
+import java.util.List;
+
+public class TalksAdapter extends RecyclerView.Adapter<TalksViewHolder> {
 
     private TalkDelegate mTalkDelegate;
+    private List<TalkVO> mTalkList;
 
     public TalksAdapter(TalkDelegate talkDelegate) {
         mTalkDelegate = talkDelegate;
+        mTalkList = new ArrayList<>();
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TalksViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.view_holder_talks, parent, false);
         return new TalksViewHolder(view, mTalkDelegate);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(TalksViewHolder holder, int position) {
+        holder.setTalkData(mTalkList.get(position));
 
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return mTalkList.size();
+    }
+
+    public void setTalkList(List<TalkVO> talkList) {
+        this.mTalkList = talkList;
+        notifyDataSetChanged();
     }
 }
