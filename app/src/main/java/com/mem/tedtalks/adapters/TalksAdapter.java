@@ -42,7 +42,7 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksViewHolder> {
     }
 
     public void setTalkList(List<TalkVO> talkList) {
-        this.mTalkList = talkList;
+        mTalkList = talkList;
         notifyDataSetChanged();
     }
 }

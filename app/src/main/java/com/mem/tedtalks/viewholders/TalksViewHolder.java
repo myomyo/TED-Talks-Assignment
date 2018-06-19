@@ -46,9 +46,14 @@ public class TalksViewHolder extends RecyclerView.ViewHolder {
         mTalk = talk;
         tvSpeakerName.setText(talk.getSpeaker().getName());
         tvTalkTitle.setText(talk.getTitle());
-        tvDuration.setText(talk.getDurationInSec());
+       tvDuration.setText(secondsToString(talk.getDurationInSec()));
         Glide.with(ivTalkImage.getContext())
                 .load(talk.getImageUrl())
                 .into(ivTalkImage);
     }
+
+    public String secondsToString(int pTime) {
+       return String.format("%02d:%02d", pTime / 60, pTime % 60);
+    }
+
 }

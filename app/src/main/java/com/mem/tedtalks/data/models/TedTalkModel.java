@@ -1,6 +1,8 @@
 package com.mem.tedtalks.data.models;
 
 import com.mem.tedtalks.network.HttpUrlConnectionDataAgentImpl;
+import com.mem.tedtalks.network.OkHttpDataAgentImpl;
+import com.mem.tedtalks.network.RetrofitDataAgentImpl;
 import com.mem.tedtalks.network.TalksDataAgent;
 
 public class TedTalkModel {
@@ -11,10 +13,12 @@ public class TedTalkModel {
     private TalksDataAgent mDataAgent;
 
     private TedTalkModel() {
-        mDataAgent = HttpUrlConnectionDataAgentImpl.getObjInstance();
+        //mDataAgent = HttpUrlConnectionDataAgentImpl.getObjInstance();
+        //mDataAgent = OkHttpDataAgentImpl.getObjInstance();
+        mDataAgent = RetrofitDataAgentImpl.getObjInstance();
     }
 
-    public static TedTalkModel getObjInstanc(){
+    public static TedTalkModel getObjInstance(){
         if (objInstanc == null){
             objInstanc = new TedTalkModel();
         }

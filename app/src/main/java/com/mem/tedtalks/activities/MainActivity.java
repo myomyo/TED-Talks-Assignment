@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity implements TalkDelegate {
         rvTalks.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
 
-        TedTalkModel.getObjInstanc().loadTalksList();
+        TedTalkModel.getObjInstance().loadTalksList();
     }
 
     @Override
