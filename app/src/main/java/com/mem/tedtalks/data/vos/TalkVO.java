@@ -54,4 +54,8 @@ public class TalkVO {
     public List<TagVO> getTag() {
         return tag;
     }
+
+    public String secondsToString() {
+        return String.format("%02d:%02d", durationInSec / 60, durationInSec % 60);
+    }
 }

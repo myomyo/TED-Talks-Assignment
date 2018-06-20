@@ -43,7 +43,7 @@
         android:layout_below="@+id/tv_speaker_name"
         android:layout_marginLeft="15dp"
         android:gravity="left|bottom"
-        android:lineSpacingMultiplier="0.8"
+        android:lineSpacingMultiplier="0.7"
         android:paddingRight="@dimen/margin_medium"
         android:text="This simple test can help kids hear better"
         android:textColor="@color/secondaryTextColor"

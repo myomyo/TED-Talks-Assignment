@@ -37,7 +37,7 @@ public class TalksViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mTalkDelegate.onTapTalk();
+                mTalkDelegate.onTapTalk(mTalk);
             }
         });
     }
@@ -46,14 +46,11 @@ public class TalksViewHolder extends RecyclerView.ViewHolder {
         mTalk = talk;
         tvSpeakerName.setText(talk.getSpeaker().getName());
         tvTalkTitle.setText(talk.getTitle());
-       tvDuration.setText(secondsToString(talk.getDurationInSec()));
+       tvDuration.setText(talk.secondsToString());
         Glide.with(ivTalkImage.getContext())
                 .load(talk.getImageUrl())
                 .into(ivTalkImage);
     }
 
-    public String secondsToString(int pTime) {
-       return String.format("%02d:%02d", pTime / 60, pTime % 60);
-    }
 
 }

@@ -11,4 +11,6 @@ public class TalkConstants {
     public static final String ACCESS_TOKEN ="access_token";
 
     public static final String PAGE ="page";
+
+    public static final String TALK_ID = "talkId";
 }

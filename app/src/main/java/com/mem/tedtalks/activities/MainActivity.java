@@ -15,8 +15,10 @@ import android.view.MenuItem;
 import com.mem.tedtalks.R;
 import com.mem.tedtalks.adapters.TalksAdapter;
 import com.mem.tedtalks.data.models.TedTalkModel;
+import com.mem.tedtalks.data.vos.TalkVO;
 import com.mem.tedtalks.delegates.TalkDelegate;
 import com.mem.tedtalks.events.SuccessGetTalkEvent;
+import com.mem.tedtalks.utils.TalkConstants;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -42,7 +44,7 @@ public class MainActivity extends BaseActivity implements TalkDelegate {
             }
         });
 
-        RecyclerView rvTalks = (RecyclerView) findViewById(R.id.rv_ted_talks);
+        RecyclerView rvTalks = findViewById(R.id.rv_ted_talks);
         mTalksAdapter = new TalksAdapter(this);
         rvTalks.setAdapter(mTalksAdapter);
         rvTalks.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
@@ -86,8 +88,9 @@ public class MainActivity extends BaseActivity implements TalkDelegate {
     }
 
     @Override
-    public void onTapTalk() {
+    public void onTapTalk(TalkVO talk) {
         Intent intent = new Intent(getApplicationContext(), TalkDetailsActivity.class);
+        intent.putExtra(TalkConstants.TALK_ID, talk.getTalkId());
         startActivity(intent);
     }
 

@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/margin_medium_2">
 
+
     <Button
         android:id="@+id/ib_talks"
         android:layout_width="@dimen/talks_width"
@@ -18,23 +19,25 @@
         android:textColorHighlight="#000000"
         android:textSize="@dimen/text_smaller" />
 
+
+
     <TextView
-        android:id="@+id/tv_speaker_name"
+        android:id="@+id/tv_next_speaker_name"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_medium"
-        android:layout_toRightOf="@+id/ib_talks"
+        android:layout_toEndOf="@+id/ib_talks"
         android:lineSpacingMultiplier="0.5"
         android:text="Nilay Kulkarni"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/text_regular" />
 
     <TextView
-        android:id="@+id/tv_talk_title"
+        android:id="@+id/tv_next_talk_title"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tv_speaker_name"
-        android:layout_below="@+id/tv_speaker_name"
+        android:layout_alignStart="@+id/tv_next_speaker_name"
+        android:layout_below="@+id/tv_next_speaker_name"
         android:lineSpacingMultiplier="0.8"
         android:text="A life-saving invention that prevents human stampedes"
         android:textColor="@color/primary_text"
@@ -47,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_card_medium"
-        android:layout_toRightOf="@+id/tv_talk_title"
+        android:layout_toEndOf="@+id/tv_next_talk_title"
         android:background="@color/bg_transparent"
         android:src="@drawable/ic_more_vert_gray_24dp" />
 

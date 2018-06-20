@@ -36,7 +36,7 @@
 
     <dimen name="margin_top_large">125dp</dimen>
     <dimen name="talk_details_appbar_height">240dp</dimen>
-    <dimen name="button_listen_height">26dp</dimen>
+    <dimen name="button_listen_height">16dp</dimen>
     <dimen name="button_listen_width">70dp</dimen>
     <dimen name="profile_width">40dp</dimen>
     <dimen name="profile_height">40dp</dimen>
