@@ -3,6 +3,7 @@ package com.mem.tedtalks.viewholders;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -22,8 +23,11 @@ public class NextTalksViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.tv_next_talk_title)
     TextView tvTalkTitle;
 
-    @BindView(R.id.ib_talks)
-    Button btnTalkImage;
+    @BindView(R.id.iv_talks_next)
+    ImageView ivTalkNext;
+
+    @BindView(R.id.tv_duration_next)
+    TextView tvDurationNext;
 
     public NextTalksViewHolder(View itemView) {
         super(itemView);
@@ -34,9 +38,9 @@ public class NextTalksViewHolder extends RecyclerView.ViewHolder {
         mTalk = talk;
         tvSpeakerName.setText(talk.getSpeaker().getName());
         tvTalkTitle.setText(talk.getTitle());
-        btnTalkImage.setText(talk.secondsToString());
-       /* Glide.with(btnTalkImage.getContext())
+        tvDurationNext.setText(talk.secondsToString());
+        Glide.with(ivTalkNext.getContext())
                 .load(talk.getImageUrl())
-                .into(btnTalkImage);*/
+                .into(ivTalkNext);
     }
 }

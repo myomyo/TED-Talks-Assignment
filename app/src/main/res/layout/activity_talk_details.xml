@@ -24,25 +24,27 @@
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/talk1" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/btn_back"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_arrow_white_black_24dp"
-                        android:layout_marginTop="@dimen/margin_medium_2"
-                        android:layout_marginLeft="@dimen/margin_medium_2"
-                        />
-                    <ImageView
-                        android:id="@+id/btn_setting"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_more_vert_white_24dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="@dimen/margin_medium_2"
-                        android:layout_marginRight="@dimen/margin_medium_2"/>
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:src="@drawable/ic_arrow_white_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/btn_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:src="@drawable/ic_more_vert_white_24dp" />
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
@@ -103,8 +105,7 @@
 
                 <View
                     android:id="@+id/spacer_vertical"
-                    style="@style/DividerVertical"
-                    />
+                    style="@style/DividerVertical" />
 
                 <Button
                     android:id="@+id/btn_listen"
@@ -131,32 +132,32 @@
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_playlist_add_black_24dp"
-                    android:foreground="@drawable/ripple"/>
+                    android:foreground="@drawable/ripple"
+                    android:src="@drawable/ic_playlist_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/ib_favorite"
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:foreground="@drawable/ripple"/>
+                    android:foreground="@drawable/ripple"
+                    android:src="@drawable/ic_favorite_border_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/ib_download"
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_file_download_black_24dp"
-                    android:foreground="@drawable/ripple"/>
+                    android:foreground="@drawable/ripple"
+                    android:src="@drawable/ic_file_download_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/ib_share"
                     style="@style/button_ic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_share_black_24dp"
-                    android:foreground="@drawable/ripple"/>
+                    android:foreground="@drawable/ripple"
+                    android:src="@drawable/ic_share_black_24dp" />
             </LinearLayout>
 
             <TextView
@@ -170,7 +171,7 @@
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/text_regular" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/tv_talk_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -179,12 +180,12 @@
                 android:text="TEDWomen 2017, Filmed Nov 2017 "
                 android:textColor="@color/secondary_text"
                 android:textSize="@dimen/text_regular_2x"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic" />-->
 
             <View
                 android:id="@+id/line_spacer"
                 style="@style/Divider"
-                android:layout_below="@+id/tv_talk_date" />
+                android:layout_below="@+id/tv_talk_details" />
 
             <TextView
                 android:id="@+id/tv-talk_ad"
@@ -226,11 +227,11 @@
                 android:layout_width="@dimen/profile_width"
                 android:layout_height="@dimen/profile_height"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:scaleType="centerCrop"
                 android:layout_below="@+id/tv_about"
-                android:src="@drawable/talk_profile"
-                android:layout_marginTop="@dimen/margin_medium_2"/>
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:scaleType="centerCrop"
+                android:src="@drawable/talk_profile" />
 
             <TextView
                 android:id="@+id/tv_about_speaker_name"
