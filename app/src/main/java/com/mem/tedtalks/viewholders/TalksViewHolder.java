@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide;
 import com.mem.tedtalks.R;
 import com.mem.tedtalks.data.vos.TalkVO;
 import com.mem.tedtalks.delegates.TalkDelegate;
+import com.mem.tedtalks.utils.GlideApp;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,8 +48,10 @@ public class TalksViewHolder extends RecyclerView.ViewHolder {
         tvSpeakerName.setText(talk.getSpeaker().getName());
         tvTalkTitle.setText(talk.getTitle());
        tvDuration.setText(talk.secondsToString());
-        Glide.with(ivTalkImage.getContext())
+        GlideApp.with(ivTalkImage.getContext())
                 .load(talk.getImageUrl())
+                .placeholder(R.drawable.placeholder_image)
+                .error(R.drawable.error_image)
                 .into(ivTalkImage);
     }
 

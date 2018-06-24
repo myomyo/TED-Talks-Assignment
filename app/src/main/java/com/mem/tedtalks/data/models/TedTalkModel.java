@@ -21,7 +21,6 @@ public class TedTalkModel {
     private static TedTalkModel objInstance;
     private TalksDataAgent mDataAgent;
     private Map<Integer, TalkVO> mTalkMap;
-    private List<TalkVO> mTalkList;
 
 
     private TedTalkModel() {
@@ -29,7 +28,6 @@ public class TedTalkModel {
         //mDataAgent = OkHttpDataAgentImpl.getObjInstance();
         mDataAgent = RetrofitDataAgentImpl.getObjInstance();
         mTalkMap = new HashMap<>();
-        mTalkList = new ArrayList<>();
         EventBus.getDefault().register(this);
 
     }
@@ -52,15 +50,13 @@ public class TedTalkModel {
     }
 
     public List<TalkVO> getTalkList() {
-        return mTalkList;
+        return new ArrayList<>(mTalkMap.values());
     }
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     public void onSuccessGetTalks(SuccessGetTalkEvent event){
-
         for(TalkVO talk : event.getTalkList()){
             mTalkMap.put(talk.getTalkId(), talk);
         }
-        mTalkList = event.getTalkList();
     }
 }

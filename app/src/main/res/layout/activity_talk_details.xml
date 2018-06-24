@@ -25,10 +25,11 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/talk1" />
 
-            <RelativeLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_details"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" >
                 <ImageView
                     android:id="@+id/btn_back"
                     android:layout_width="wrap_content"
@@ -41,16 +42,11 @@
                     android:id="@+id/btn_setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="280dp"
                     android:layout_marginRight="@dimen/margin_medium_2"
                     android:layout_marginTop="@dimen/margin_medium_2"
                     android:src="@drawable/ic_more_vert_white_24dp" />
-            </RelativeLayout>
-
-            <android.support.v7.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin" />
+            </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -292,8 +288,7 @@
                     android:id="@+id/rv_talk_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/iv_watch_next"
-                    android:layout_marginBottom="@dimen/margin_medium_3">
+                    android:layout_below="@+id/iv_watch_next">
 
                 </android.support.v7.widget.RecyclerView>
             </FrameLayout>
